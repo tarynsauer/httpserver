@@ -13,9 +13,12 @@ public class WorkerRunnable implements Runnable {
     protected RequestHandler requestHandler;
     protected DataOutputStream clientOutputStream;
 
-    public WorkerRunnable(Socket clientSocket) {
+    public WorkerRunnable(Socket clientSocket) throws IOException {
         this.clientSocket = clientSocket;
-        this.requestHandler = new RequestHandler();
+    }
+
+    public void setRequestHandler(RequestHandler requestHandler) {
+        this.requestHandler = requestHandler;
     }
 
     public void setInput(BufferedReader clientRequest) {
@@ -47,7 +50,7 @@ public class WorkerRunnable implements Runnable {
     }
 
     protected byte[] getResponseMessage(BufferedReader input) throws IOException {
-        requestHandler.setParser(new RequestParser(input));
+        this.requestHandler = new RequestHandler(new RequestParser(input));
         return requestHandler.getResponse();
     }
 

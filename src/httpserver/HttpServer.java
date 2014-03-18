@@ -1,5 +1,6 @@
 package httpserver;
 
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 /**
@@ -28,10 +29,14 @@ public class HttpServer implements Runnable {
     public void run() {
         openServerSocket();
         synchronizeCurrentThread();
-        acceptClientRequest();
+        try {
+            acceptClientRequest();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void acceptClientRequest() {
+    private void acceptClientRequest() throws IOException {
         while(!isStopped()) {
             try {
                 clientSocket = serverSocket.accept();
@@ -54,7 +59,7 @@ public class HttpServer implements Runnable {
         }
     }
 
-    protected void startNewThread() {
+    protected void startNewThread() throws IOException {
         new Thread(new WorkerRunnable(clientSocket)).start();
     }
 
