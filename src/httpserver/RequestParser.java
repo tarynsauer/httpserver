@@ -139,6 +139,15 @@ public class RequestParser {
         return input.replace("\n", "").replace("\r", "");
     }
 
+    public String getAuthentication() {
+        Pattern pattern = Pattern.compile("Authorization: Basic (.*?)==");
+        Matcher matcher = pattern.matcher(request);
+        if (matcher.find()) {
+            return matcher.group(1);
+        } else {
+            return null;
+        }
+    }
 
     protected boolean containsHeader(String headerName) {
         return getHeaders().containsKey(headerName);
@@ -169,4 +178,33 @@ public class RequestParser {
             return rangeList;
         }
     }
+
+    public String getParamVal(String data) {
+        return getParams().get(data);
+    }
+
+    protected String[] getAllVariables() {
+        String queryString = getQueryString();
+        String[] queries = queryString.split("=");
+        String queryParts = "";
+        for(String s : queries) {
+            queryParts += s;
+            queryParts += " = ";
+        }
+        String[] variables = queryParts.split("&");
+        variables[variables.length - 1] = variables[variables.length - 1].split(" HTTP/1.1")[0];
+        return variables;
+    }
+
+    protected String getQueryString() {
+        String match = null;
+        Pattern pattern = Pattern.compile("\\?(.*)");
+        Matcher matcher = pattern.matcher(getRequest());
+
+        if (matcher.find()) {
+            match = matcher.group(1);
+        }
+        return match;
+    }
+
 }

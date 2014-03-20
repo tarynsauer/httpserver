@@ -14,42 +14,31 @@ public class BodyGenerator {
         this.parser = parser;
     }
 
-    public byte[] addBodyToResponse(StringBuilder builder, String bodyContent) throws IOException {
+    public byte[] addBodyToResponse(StringBuilder builder, String contents) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
-        if ((parser.containsHeader("Range"))) {
-            byte[] partialResponse = getPartialResponse(builder);
-            outputStream.write(partialResponse);
-        } else if (getContentType().equals("text/plain") || isFile()) {
+        if (parser.containsHeader("Range")) {
+            String partialContents = new String(getPartialResponse());
+            builder.append(partialContents);
+        }
+        else if (contents.equals("file")) {
             builder = getFileContents(builder);
-        } else if (getContentType().startsWith("image/")) {
+        } else if (contents.equals("image")) {
             writeImageToResponse(outputStream, builder);
         } else {
-            builder.append(displayBody(bodyContent));
+            builder.append(displayBody(contents));
         }
         outputStream.write(builder.toString().getBytes());
         outputStream.close();
         return outputStream.toByteArray();
     }
 
-    public boolean isFile() {
-        String name = parser.getFileName();
-        return (name.equals("file1") || name.equals("file2"));
-    }
-
-    public String getContentType() {
-        String ext = parser.getFileExtension();
-        if (ext.equals(".txt")) {
-            return "text/plain";
-        } else if (ext.equals(".jpg") || ext.equals(".jpeg")) {
-            return "image/jpeg";
-        } else if (ext.equals(".gif")) {
-            return "image/gif";
-        } else if (ext.equals(".png")) {
-            return "image/png";
-        } else {
-            return "text/html";
-        }
+    public byte[] addNotFoundResponse(StringBuilder builder) throws IOException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        builder.append(displayBody("<h1>404 Not Found</h1>"));
+        outputStream.write(builder.toString().getBytes());
+        outputStream.close();
+        return outputStream.toByteArray();
     }
 
     private OutputStream writeImageToResponse(OutputStream outputStream, StringBuilder builder) {
@@ -101,7 +90,8 @@ public class BodyGenerator {
         return "<html><title>Taryn's Website</title><body>" + bodyContent + "</body></html>";
     }
 
-    private byte[] getPartialResponse(StringBuilder builder) throws IOException {
+    private byte[] getPartialResponse() throws IOException {
+        StringBuilder builder = new StringBuilder();
         byte[] contents = getFileContents(builder).toString().getBytes();
         if (parser.getRange() == null) {
             return contents;

@@ -107,6 +107,11 @@ public class RequestParserTest extends TestHelpers {
     }
 
     @Test
+    public void testGetParamVal() throws Exception {
+        assertEquals(requestParser.getParamVal("data"), "heathcliff");
+    }
+
+    @Test
     public void testContainsHeaderReturnsTrueWhenHeaderPresent() throws Exception {
         assertTrue(requestParser.containsHeader("Content-Length"));
     }

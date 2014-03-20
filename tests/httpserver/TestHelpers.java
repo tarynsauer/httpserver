@@ -24,4 +24,9 @@ public class TestHelpers {
         return input.replace("\n", "").replace("\r", "");
     }
 
+    public String getDate() {
+        java.util.Date date= new java.util.Date();
+        return date.toString();
+    }
+
 }

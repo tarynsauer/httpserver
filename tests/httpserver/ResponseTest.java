@@ -7,6 +7,7 @@ import java.io.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
+import static httpserver.HTTPStatusConstants.OK;
 
 /**
  * Created by Taryn on 3/13/14.
@@ -24,7 +25,7 @@ public class ResponseTest {
         InputStream input = new ByteArrayInputStream(data);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(input));
         RequestParser parser = new RequestParser(bufferedReader);
-        response = new Response(parser);
+        response = new Response(parser, "text/html", OK, "", "");
     }
 
     @Test
@@ -35,7 +36,7 @@ public class ResponseTest {
 
     @Test
     public void testDisplayStatusShowsDefault404Status() throws Exception {
-        assertEquals(response.displayStatus(), "HTTP/1.1 404 Not Found\r\n");
+        assertEquals(response.displayStatus(), "HTTP/1.1 200 OK\r\n");
     }
 
 }

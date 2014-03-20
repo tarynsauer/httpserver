@@ -1,17 +1,34 @@
 package httpserver;
 import java.io.IOException;
-
 import static httpserver.HTTPStatusConstants.NOT_FOUND;
 /**
  * Created by Taryn on 3/17/14.
  */
 public class Response {
-    private RequestParser parser;
     private BodyGenerator bodyGenerator;
+    private String contentType;
+    private String status;
+    private String contents;
+    private String headerContents;
 
-    public Response(RequestParser parser) {
-        this.parser = parser;
+    public Response(RequestParser parser, String contentType, String status, String contents, String headerContents) {
         this.bodyGenerator = new BodyGenerator(parser);
+        this.contentType = contentType;
+        this.status = status;
+        this.contents = contents;
+        this.headerContents = headerContents;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public String getContents() {
+        return this.contents;
+    }
+
+    public String getContentType() {
+        return this.contentType;
     }
 
     public byte[] getResponseMessage() throws IOException {
@@ -22,19 +39,19 @@ public class Response {
         builder.append(displayResponseHeaders());
         builder.append(displayContentType());
 
-        return bodyGenerator.addBodyToResponse(builder, getBodyContents());
-    }
-
-    private String getBodyContents() {
-        return "";
+        if (status.equals(NOT_FOUND)) {
+            return bodyGenerator.addNotFoundResponse(builder);
+        } else {
+            return bodyGenerator.addBodyToResponse(builder, getContents());
+        }
     }
 
     protected String displayStatus() {
-        return "HTTP/1.1 " + NOT_FOUND +  "\r\n";
+        return "HTTP/1.1 " + getStatus() +  "\r\n";
     }
 
     public String displayResponseHeaders() {
-        return "";
+        return this.headerContents;
     }
 
     private String displayDate() {
@@ -47,6 +64,6 @@ public class Response {
     }
 
     private String displayContentType() throws IOException {
-        return "Content-Type: text/html\r\n\r\n";
+        return "Content-Type: " + getContentType() + "\r\n\r\n";
     }
 }
