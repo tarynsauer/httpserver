@@ -6,17 +6,17 @@ import static httpserver.HTTPStatusConstants.NOT_FOUND;
  */
 public class Response {
     private BodyGenerator bodyGenerator;
-    private String contentType;
     private String status;
     private String contents;
     private String headerContents;
+    private RequestParser parser;
 
-    public Response(RequestParser parser, String contentType, String status, String contents, String headerContents) {
+    public Response(RequestParser parser, String status, String contents, String headerContents) {
         this.bodyGenerator = new BodyGenerator(parser);
-        this.contentType = contentType;
         this.status = status;
         this.contents = contents;
         this.headerContents = headerContents;
+        this.parser = parser;
     }
 
     public String getStatus() {
@@ -28,7 +28,18 @@ public class Response {
     }
 
     public String getContentType() {
-        return this.contentType;
+        String ext = parser.getFileExtension();
+        if (ext.equals(".txt")) {
+            return "text/plain";
+        } else if (ext.equals(".jpg") || ext.equals(".jpeg")) {
+            return "image/jpeg";
+        } else if (ext.equals(".gif")) {
+            return "image/gif";
+        } else if (ext.equals(".png")) {
+            return "image/png";
+        } else {
+            return "text/html";
+        }
     }
 
     public byte[] getResponseMessage() throws IOException {

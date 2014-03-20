@@ -25,7 +25,7 @@ public class ResponseTest {
         InputStream input = new ByteArrayInputStream(data);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(input));
         RequestParser parser = new RequestParser(bufferedReader);
-        response = new Response(parser, "text/html", OK, "", "");
+        response = new Response(parser, OK, "", "");
     }
 
     @Test

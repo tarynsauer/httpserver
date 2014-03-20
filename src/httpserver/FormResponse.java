@@ -8,8 +8,8 @@ public class FormResponse extends Response {
     private RequestParser parser;
     private String contents;
 
-    public FormResponse(RequestParser parser, String contentType, String status, String contents, String headerContents) {
-        super(parser, contentType, status, contents, headerContents);
+    public FormResponse(RequestParser parser, String status, String contents, String headerContents) {
+        super(parser, status, contents, headerContents);
         this.parser = parser;
         getAttribute();
         this.contents = getContents();

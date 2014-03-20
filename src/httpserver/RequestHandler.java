@@ -27,13 +27,17 @@ public class RequestHandler {
         if (requestToBeLogged()) {
             logRequest();
         }
-        if (unauthorized()) {
-            return new AuthenticateResponse(parser, getContentType(), getStatus(), getContents(), getLogs());
-        } else if (parser.getUri().equals("/form")) {
-            return new FormResponse(parser, getContentType(), getStatus(), getContents(), getHeaders());
+        if (authorizationRequired()) {
+            return new AuthenticateResponse(parser, getStatus(), getContents(), getLogs());
+        } else if (formRequest()) {
+            return new FormResponse(parser, getStatus(), getContents(), getHeaders());
         } else {
-            return new Response(parser, getContentType(), getStatus(), getContents(), getHeaders());
+            return new Response(parser, getStatus(), getContents(), getHeaders());
         }
+    }
+
+    private boolean formRequest() {
+        return parser.getUri().equals("/form");
     }
 
     protected void logRequest() {
@@ -52,27 +56,12 @@ public class RequestHandler {
         return this.response;
     }
 
-    public String getContentType() {
-        String ext = parser.getFileExtension();
-        if (ext.equals(".txt")) {
-            return "text/plain";
-        } else if (ext.equals(".jpg") || ext.equals(".jpeg")) {
-            return "image/jpeg";
-        } else if (ext.equals(".gif")) {
-            return "image/gif";
-        } else if (ext.equals(".png")) {
-            return "image/png";
-        } else {
-            return "text/html";
-        }
-    }
-
     public String getStatus() {
         if (redirect()) {
             return MOVED_PERMANENTLY;
         } else if (methodNotAllowed()) {
             return METHOD_NOT_ALLOWED;
-        } else if (unauthorized()) {
+        } else if (authorizationRequired()) {
             return UNAUTHORIZED;
         } else if (partialContentRequest()) {
             return PARTIAL_RESPONSE;
@@ -99,7 +88,7 @@ public class RequestHandler {
         return site.getRequestsToBeLogged().containsKey(parser.getUri()) && site.getRequestsToBeLogged().containsValue(parser.getMethod());
     }
 
-    private boolean unauthorized() {
+    private boolean authorizationRequired() {
         return Arrays.asList(site.getProtectedRoutes()).contains(parser.getUri());
     }
 

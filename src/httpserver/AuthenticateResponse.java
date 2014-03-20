@@ -8,11 +8,10 @@ public class AuthenticateResponse extends Response {
     private boolean authenticated = false;
     private String contents;
     private String authentication;
-    private String status;
     private String logContents;
 
-    public AuthenticateResponse(RequestParser parser, String contentType, String status, String contents, String logContents) {
-        super(parser, contentType, status, contents, logContents);
+    public AuthenticateResponse(RequestParser parser, String status, String contents, String logContents) {
+        super(parser, status, contents, logContents);
         this.authentication = parser.getAuthentication();
         isValid();
         this.contents = getContents();
