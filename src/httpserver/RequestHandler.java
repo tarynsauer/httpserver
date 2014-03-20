@@ -14,6 +14,7 @@ public class RequestHandler {
     private byte[] response;
     protected RequestParser parser;
     private SiteManager site;
+    private static String logs = "";
 
     public RequestHandler(RequestParser requestParser) throws IOException {
         this.site = new SiteManager();
@@ -23,13 +24,24 @@ public class RequestHandler {
     }
 
     public Response generateResponse() throws UnsupportedEncodingException {
+        if (requestToBeLogged()) {
+            logRequest();
+        }
         if (unauthorized()) {
-            return new AuthenticateResponse(parser, getContentType(), getStatus(), getContents(), getHeaders());
+            return new AuthenticateResponse(parser, getContentType(), getStatus(), getContents(), getLogs());
         } else if (parser.getUri().equals("/form")) {
             return new FormResponse(parser, getContentType(), getStatus(), getContents(), getHeaders());
         } else {
             return new Response(parser, getContentType(), getStatus(), getContents(), getHeaders());
         }
+    }
+
+    protected void logRequest() {
+        logs += "<p>" + parser.getMethod() + " " + parser.getUri() + " " + "HTTP/1.1</p>";
+    }
+
+    private String getLogs() {
+        return logs;
     }
 
     private String getHeaders() {
@@ -38,14 +50,6 @@ public class RequestHandler {
 
     public byte[] getResponse() {
         return this.response;
-    }
-
-    public SiteManager getSite() {
-        return this.site;
-    }
-
-    public void setResponse(String response) {
-        this.response = response.getBytes();
     }
 
     public String getContentType() {
@@ -91,6 +95,10 @@ public class RequestHandler {
         return site.getRedirectedRoutes().containsKey(parser.getUri());
     }
 
+    private boolean requestToBeLogged() {
+        return site.getRequestsToBeLogged().containsKey(parser.getUri()) && site.getRequestsToBeLogged().containsValue(parser.getMethod());
+    }
+
     private boolean unauthorized() {
         return Arrays.asList(site.getProtectedRoutes()).contains(parser.getUri());
     }
@@ -132,7 +140,6 @@ public class RequestHandler {
         } else {
             return "";
         }
-
     }
 
     protected String[] getMethodOptions() {

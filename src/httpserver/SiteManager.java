@@ -13,6 +13,7 @@ public class SiteManager {
     private static HashMap<String, String> redirectedRoutes = new HashMap<String, String>();
     private static HashMap<String, String[]> restrictedMethods = new HashMap<String, String[]>();
     private static HashMap<String, String[]> methodOptions = new HashMap<String, String[]>();
+    private static HashMap<String, String> requestsToBeLogged = new HashMap<String, String>();
 
     public SiteManager() {
     }
@@ -39,6 +40,13 @@ public class SiteManager {
         return methodOptions;
     }
 
+    public HashMap<String, String> getRequestsToBeLogged() {
+        requestsToBeLogged.put("/log", "GET");
+        requestsToBeLogged.put("/these", "PUT");
+        requestsToBeLogged.put("/requests", "HEAD");
+        return requestsToBeLogged;
+    }
+
     public HashMap<String, String> getUris() {
         validUris.put("/", "<h1>Hey there!</h1>" + listFiles());
         validUris.put("/file1", "file");
@@ -51,6 +59,8 @@ public class SiteManager {
         validUris.put("/form", "<p>There may be a hidden name value here.</p>");
         validUris.put("/parameters", "<h1>Decoded parameters:</h1>");
         validUris.put("/log", "<h1>Log</h1>");
+        validUris.put("/these", "<h1>These</h1>");
+        validUris.put("/requests", "<h1>Requests</h1>");
         validUris.put("/logs", "<h1>Logs</h1>");
         validUris.put("/method_options", "<h1>Here are you method options</h1>");
         validUris.put("/redirect", "redirect");

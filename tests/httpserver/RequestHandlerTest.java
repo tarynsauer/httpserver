@@ -169,6 +169,9 @@ public class RequestHandlerTest extends TestHelpers {
 
     @Test
     public void testGetResponseAuthenticatedResponse() throws Exception {
+        setRequestString("GET /log HTTP/1.1\r\nConnection: close\r\nHost: localhost:5000\r\n\r\n\r\n");
+        setRequestString("PUT /these HTTP/1.1\r\nConnection: close\r\nHost: localhost:5000\r\n\r\n\r\n");
+        setRequestString("HEAD /requests HTTP/1.1\r\nConnection: close\r\nHost: localhost:5000\r\n\r\n\r\n");
         setRequestString("GET /logs HTTP/1.1\r\nAuthorization: Basic YWRtaW46aHVudGVyMg==\r\nConnection: close\r\nHost: localhost:5000\r\n\r\n\r\n");
         String actual = new String(handler.getResponse(), "UTF-8");
         assertEquals(normalizeString(actual), "HTTP/1.1 200 OKDate: " + getDate() + "Server: Taryn's Java ServerContent-Type: text/html<html><title>Taryn's Website</title><body><h1>Logs</h1><p>GET /log HTTP/1.1</p><p>PUT /these HTTP/1.1</p><p>HEAD /requests HTTP/1.1</p></body></html>");

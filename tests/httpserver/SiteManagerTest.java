@@ -18,7 +18,7 @@ public class SiteManagerTest extends TestHelpers {
 
     @Test
     public void testGetValidUris() throws Exception {
-        assertEquals(siteManager.getUris().size(), 14);
+        assertEquals(siteManager.getUris().size(), 16);
     }
 
     @Test
@@ -39,5 +39,10 @@ public class SiteManagerTest extends TestHelpers {
     @Test
     public void testGetMethodOptions() throws Exception {
         assertEquals(siteManager.getMethodOptions().size(), 1);
+    }
+
+    @Test
+    public void testGetRequestsToBeLogged() throws Exception {
+        assertEquals(siteManager.getRequestsToBeLogged().size(), 3);
     }
 }

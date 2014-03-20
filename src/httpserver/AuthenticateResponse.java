@@ -9,17 +9,19 @@ public class AuthenticateResponse extends Response {
     private String contents;
     private String authentication;
     private String status;
+    private String logContents;
 
-    public AuthenticateResponse(RequestParser parser, String contentType, String status, String contents, String headerContents) {
-        super(parser, contentType, status, contents, headerContents);
+    public AuthenticateResponse(RequestParser parser, String contentType, String status, String contents, String logContents) {
+        super(parser, contentType, status, contents, logContents);
         this.authentication = parser.getAuthentication();
         isValid();
         this.contents = getContents();
+        this.logContents = logContents;
     }
 
     public String getContents() {
-        if (getAuthenticated()) {    // + logger.getLogs());
-            return "<h1>Logs</h1><p>GET /log HTTP/1.1</p><p>PUT /these HTTP/1.1</p><p>HEAD /requests HTTP/1.1</p>";
+        if (getAuthenticated()) {
+            return "<h1>Logs</h1>" + getLogContents();
         } else {
             return "<h1>Authentication required</h1>";
         }
@@ -41,22 +43,25 @@ public class AuthenticateResponse extends Response {
         }
     }
 
-    public boolean getAuthenticated() {
+    private boolean getAuthenticated() {
         return this.authenticated;
     }
 
-    public void setAuthenticated(boolean authenticated) {
+    private void setAuthenticated(boolean authenticated) {
         this.authenticated = authenticated;
     }
 
     private void isValid() {
         if (authentication == null) {
-            this.authenticated = false;
+            setAuthenticated(false);
         } else if (authentication.equals(AUTH_TOKEN)) {
-            this.authenticated = true;
+            setAuthenticated(true);
         } else {
-            this.authenticated = false;
+            setAuthenticated(false);
         }
     }
 
+    private String getLogContents() {
+        return logContents;
+    }
 }
