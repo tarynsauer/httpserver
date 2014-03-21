@@ -137,7 +137,7 @@ public class RequestParser {
         return input.replace("\n", "").replace("\r", "");
     }
 
-    public String getAuthentication() {
+    protected String getAuthentication() {
         Pattern pattern = Pattern.compile("Authorization: Basic (.*?)==");
         Matcher matcher = pattern.matcher(request);
         if (matcher.find()) {
@@ -155,15 +155,15 @@ public class RequestParser {
         return getHeaders().get(headerName);
     }
 
-    public int getBeginRange() throws IOException {
+    protected int getBeginRange() throws IOException {
         return Integer.parseInt(getRange()[0]);
     }
 
-    public int getEndRange() throws IOException {
+    protected int getEndRange() throws IOException {
         return (Integer.parseInt(getRange()[1]));
     }
 
-    public String[] getRange() throws IOException {
+    protected String[] getRange() throws IOException {
         String rangeParts = getHeader("Range");
         if (rangeParts == null) {
             return null;
@@ -177,7 +177,7 @@ public class RequestParser {
         }
     }
 
-    public String getParamVal(String data) {
+    protected String getParamVal(String data) {
         return getParams().get(data);
     }
 
