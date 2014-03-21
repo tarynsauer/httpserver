@@ -21,14 +21,10 @@ public class HttpServer implements Runnable {
         return this.isStopped;
     }
 
-    public void setClientSocket(Socket socket) {
-        this.clientSocket = socket;
-    }
-
     @Override
     public void run() {
-        openServerSocket();
         synchronizeCurrentThread();
+        openServerSocket();
         try {
             acceptClientRequest();
         } catch (IOException e) {

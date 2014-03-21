@@ -6,27 +6,25 @@ import org.junit.Test;
 import java.io.*;
 import java.util.Scanner;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 /**
  * Created by Taryn on 3/15/14.
  */
-public class WorkerRunnableTest {
+public class WorkerRunnableTest extends TestHelpers {
     private WorkerRunnable worker;
     private MockSocket mockSocket;
     private String exampleRequest;
-    private InputStream mockRequest;
 
     @Before
     public void setUp() throws Exception {
-        MockSocket mockSocket = new MockSocket();
+        mockSocket = new MockSocket();
         mockSocket.setInputStream("Test request");
         mockSocket.setOutputStream("Test response");
         worker = new WorkerRunnable(mockSocket);
 
-        exampleRequest = "Test request";
-        mockRequest = new ByteArrayInputStream(exampleRequest.getBytes());
+        exampleRequest = "GET / HTTP/1.1\r\nConnection: close\r\nHost: localhost:5000\r\n\r\n\r\n";
+        ByteArrayInputStream mockRequest = new ByteArrayInputStream(exampleRequest.getBytes());
         worker.setClientInputStream(mockRequest);
     }
 
@@ -50,29 +48,27 @@ public class WorkerRunnableTest {
 
     @Test
     public void testGetClientRequest() throws Exception {
-        assertEquals(exampleRequest, bufferedReaderToString(worker.getClientRequest()));
+        assertEquals(normalizeString(exampleRequest), normalizeString(bufferedReaderToString(worker.getClientRequest())));
     }
 
-//    @Test
-//    public void testGetResponse() throws Exception {
-//        String exampleResponse = "Example response";
-//        byte[] data = exampleResponse.getBytes();
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(data)));
-//
-//        String actualResponse = new String(worker.getResponseMessage(reader), "UTF-8");
-//        assertEquals(exampleResponse, actualResponse);
-//    }
+    @Test
+    public void testGetResponse() throws Exception {
+        byte[] data = "Example request".getBytes();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(data)));
+        String actualResponse = new String(worker.getResponseMessage(reader), "UTF-8");
+        assertTrue(actualResponse.startsWith("HTTP/1.1 200 OK"));
+    }
 
     @Test
     public void testSetClientInputStream() throws Exception {
-        worker.setClientInputStream();
-        assertEquals(convertStreamToString(worker.getClientInputStream()), "Test request");
+        worker.createClientInputStream();
+        assertTrue(convertStreamToString(worker.getClientInputStream()).startsWith("GET / HTTP/1.1"));
     }
 
     @Test
     public void testProvideResponseForClient() throws Exception {
         byte[] testResponse = "Test response".getBytes();
-        worker.setClientInputStream();
+        worker.createClientInputStream();
         worker.getClientRequest();
         worker.provideResponseForClient(testResponse);
         assertNotNull(worker.getClientOutputStream());

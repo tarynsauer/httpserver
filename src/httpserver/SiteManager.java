@@ -8,26 +8,21 @@ import static httpserver.JavaserverConstants.DIRECTORY_PATH;
  * Created by Taryn on 3/13/14.
  */
 public class SiteManager {
-    private static HashMap<String, String> validUris = new HashMap<String, String>();
-    private static String[] protectedRoutes = {"/logs"};
-    private static HashMap<String, String> redirectedRoutes = new HashMap<String, String>();
-    private static HashMap<String, String[]> restrictedMethods = new HashMap<String, String[]>();
-    private static HashMap<String, String[]> methodOptions = new HashMap<String, String[]>();
-    private static HashMap<String, String> requestsToBeLogged = new HashMap<String, String>();
-
-    public SiteManager() {
-    }
 
     public String[] getProtectedRoutes() {
-        return protectedRoutes;
+        return new String[] {"/logs"};
     }
 
     public HashMap<String, String> getRedirectedRoutes() {
+        HashMap<String, String> redirectedRoutes;
+        redirectedRoutes = new HashMap<String, String>();
         redirectedRoutes.put("/redirect", "/");
         return redirectedRoutes;
     }
 
     public HashMap<String, String[]> getRestrictedMethods() {
+        HashMap<String, String[]> restrictedMethods;
+        restrictedMethods = new HashMap<String, String[]>();
         String[] restrictPutAndPost = {"PUT", "POST"};
         restrictedMethods.put("/file1", restrictPutAndPost);
         restrictedMethods.put("/text-file.txt", restrictPutAndPost);
@@ -35,12 +30,16 @@ public class SiteManager {
     }
 
     public HashMap<String, String[]> getMethodOptions() {
+        HashMap<String, String[]> methodOptions;
+        methodOptions = new HashMap<String, String[]>();
         String[] optionsAllowed = {"GET","HEAD","POST","OPTIONS","PUT"};
         methodOptions.put("/method_options", optionsAllowed);
         return methodOptions;
     }
 
     public HashMap<String, String> getRequestsToBeLogged() {
+        HashMap<String, String> requestsToBeLogged;
+        requestsToBeLogged = new HashMap<String, String>();
         requestsToBeLogged.put("/log", "GET");
         requestsToBeLogged.put("/these", "PUT");
         requestsToBeLogged.put("/requests", "HEAD");
@@ -48,6 +47,7 @@ public class SiteManager {
     }
 
     public HashMap<String, String> getUris() {
+        HashMap<String, String> validUris = new HashMap<String, String>();
         validUris.put("/", "<h1>Hey there!</h1>" + listFiles());
         validUris.put("/file1", "file");
         validUris.put("/file2", "file");

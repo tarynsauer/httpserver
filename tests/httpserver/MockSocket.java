@@ -12,11 +12,12 @@ import java.nio.charset.Charset;
  * Created by Taryn on 3/17/14.
  */
 public class MockSocket extends Socket {
-    protected byte[] request;
     protected InputStream inputStream;
     protected OutputStream outputStream;
 
     public InputStream getInputStream() {
+        String exampleRequest = "GET / HTTP/1.1\r\nConnection: close\r\nHost: localhost:5000\r\n\r\n\r\n";
+        this.inputStream = new ByteArrayInputStream(exampleRequest.getBytes());
         return this.inputStream;
     }
 
@@ -25,8 +26,7 @@ public class MockSocket extends Socket {
     }
 
     public void setInputStream(String mockRequest) throws IOException {
-        InputStream request = new ByteArrayInputStream(mockRequest.getBytes());
-        this.inputStream = request;
+        this.inputStream = new ByteArrayInputStream(mockRequest.getBytes());
     }
 
     public void setOutputStream(final String mockResponse) throws IOException {
@@ -37,11 +37,6 @@ public class MockSocket extends Socket {
             }
         });
         this.outputStream = dataOutputStream;
-    }
-
-
-    public void write() {
-
     }
 
     public void close() {

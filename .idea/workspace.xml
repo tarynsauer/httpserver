@@ -64,54 +64,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HttpServer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/httpserver/HttpServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="9" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1245">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequestHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/httpserver/RequestHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="38" selection-start="1166" selection-end="1166" vertical-scroll-proportion="-19.615385" vertical-offset="0" max-vertical-offset="2340">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResponseTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/httpserver/ResponseTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="38" selection-start="944" selection-end="944" vertical-scroll-proportion="0.5472973" vertical-offset="0" max-vertical-offset="740">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Response.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/httpserver/Response.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="636" max-vertical-offset="1245">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-                <element signature="e#701#702#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AuthenticateResponse.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/httpserver/AuthenticateResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="52" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
+            <state line="6" column="8" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="23" max-vertical-offset="990">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,11 +75,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormResponse.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/httpserver/FormResponse.java">
+      <file leaf-file-name="SiteManager.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/httpserver/SiteManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="20" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="615">
-              <folding />
+            <state line="9" column="26" selection-start="196" selection-end="196" vertical-scroll-proportion="0.053380784" vertical-offset="105" max-vertical-offset="1275">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1746#1762#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,35 +100,38 @@
         <option value="$PROJECT_DIR$/tests/httpserver/ArgsParserTest.java" />
         <option value="$PROJECT_DIR$/tests/httpserver/StartServerTest.java" />
         <option value="$PROJECT_DIR$/src/httpserver/ArgsParser.java" />
-        <option value="$PROJECT_DIR$/tests/httpserver/HttpServerTest.java" />
-        <option value="$PROJECT_DIR$/tests/httpserver/MockClient.java" />
-        <option value="$PROJECT_DIR$/tests/httpserver/MockSocket.java" />
-        <option value="$PROJECT_DIR$/src/httpserver/StartServer.java" />
         <option value="$PROJECT_DIR$/manifest.txt" />
         <option value="$PROJECT_DIR$/src/httpserver/AbstractResponse.java" />
         <option value="$PROJECT_DIR$/src/httpserver/HTTPStatusConstants.java" />
         <option value="$PROJECT_DIR$/src/httpserver/JavaserverConstants.java" />
-        <option value="$PROJECT_DIR$/src/httpserver/WorkerRunnable.java" />
         <option value="$PROJECT_DIR$/src/httpserver/StandardResponse.java" />
-        <option value="$PROJECT_DIR$/tests/httpserver/WorkerRunnableTest.java" />
-        <option value="$PROJECT_DIR$/tests/httpserver/TestHelpers.java" />
         <option value="$PROJECT_DIR$/tests/httpserver/RequestParserTest.java" />
-        <option value="$PROJECT_DIR$/src/httpserver/RequestParser.java" />
-        <option value="$PROJECT_DIR$/src/httpserver/BodyGenerator.java" />
-        <option value="$PROJECT_DIR$/tests/httpserver/SiteManagerTest.java" />
-        <option value="$PROJECT_DIR$/src/httpserver/SiteManager.java" />
         <option value="$PROJECT_DIR$/tests/httpserver/RequestHandlerTest.java" />
-        <option value="$PROJECT_DIR$/src/httpserver/HttpServer.java" />
         <option value="$PROJECT_DIR$/src/httpserver/RequestHandler.java" />
+        <option value="$PROJECT_DIR$/src/httpserver/FormResponse.java" />
+        <option value="$PROJECT_DIR$/tests/httpserver/MockRequestHandler.java" />
+        <option value="$PROJECT_DIR$/tests/httpserver/SiteManagerTest.java" />
+        <option value="$PROJECT_DIR$/src/httpserver/MockOutputStream.java" />
+        <option value="$PROJECT_DIR$/src/httpserver/BodyGenerator.java" />
+        <option value="$PROJECT_DIR$/tests/httpserver/WorkerRunnableTest.java" />
         <option value="$PROJECT_DIR$/src/httpserver/Response.java" />
         <option value="$PROJECT_DIR$/src/httpserver/AuthenticateResponse.java" />
-        <option value="$PROJECT_DIR$/src/httpserver/FormResponse.java" />
         <option value="$PROJECT_DIR$/tests/httpserver/ResponseTest.java" />
+        <option value="$PROJECT_DIR$/tests/httpserver/AuthenticateResponseTest.java" />
+        <option value="$PROJECT_DIR$/tests/httpserver/FormResponseTest.java" />
+        <option value="$PROJECT_DIR$/src/httpserver/StartServer.java" />
+        <option value="$PROJECT_DIR$/src/httpserver/WorkerRunnable.java" />
+        <option value="$PROJECT_DIR$/tests/httpserver/TestHelpers.java" />
+        <option value="$PROJECT_DIR$/tests/httpserver/MockSocket.java" />
+        <option value="$PROJECT_DIR$/tests/httpserver/HttpServerTest.java" />
+        <option value="$PROJECT_DIR$/tests/httpserver/MockClient.java" />
+        <option value="$PROJECT_DIR$/src/httpserver/HttpServer.java" />
+        <option value="$PROJECT_DIR$/src/httpserver/RequestParser.java" />
+        <option value="$PROJECT_DIR$/src/httpserver/SiteManager.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3" />
     <option name="y" value="22" />
     <option name="width" value="1436" />
     <option name="height" value="878" />
@@ -277,6 +239,8 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -284,6 +248,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="httpserver" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="httpserver" />
@@ -461,9 +428,124 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="2">
+    <configuration default="false" name="WorkerRunnableTest" type="JUnit" factoryName="JUnit">
+      <module name="httpserver" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="httpserver" />
+      <option name="MAIN_CLASS_NAME" value="httpserver.WorkerRunnableTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="HttpServerTest" type="JUnit" factoryName="JUnit">
+      <module name="httpserver" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="httpserver" />
+      <option name="MAIN_CLASS_NAME" value="httpserver.HttpServerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="RequestHandlerTest" type="JUnit" factoryName="JUnit">
+      <module name="httpserver" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="httpserver" />
+      <option name="MAIN_CLASS_NAME" value="httpserver.RequestHandlerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="RequestParserTest" type="JUnit" factoryName="JUnit">
+      <module name="httpserver" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="httpserver" />
+      <option name="MAIN_CLASS_NAME" value="httpserver.RequestParserTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SiteManagerTest" type="JUnit" factoryName="JUnit">
+      <module name="httpserver" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="httpserver" />
+      <option name="MAIN_CLASS_NAME" value="httpserver.SiteManagerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Application.Start Server" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.All Tests" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.WorkerRunnableTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.HttpServerTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RequestHandlerTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.RequestParserTest" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.SiteManagerTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -500,7 +582,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="22" width="1436" height="878" extended-state="6" />
+    <frame x="0" y="22" width="1436" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -519,8 +601,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20588236" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23601148" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24455826" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -528,29 +610,29 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16212338" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29705507" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39948782" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2996159" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23601148" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3431498" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -579,8 +661,6 @@
         <state line="6" column="13" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -617,47 +697,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="57" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="1410">
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/httpserver/ArgsParserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="28" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/httpserver/ArgsParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="784" selection-end="784" vertical-scroll-proportion="0.84375" vertical-offset="144" max-vertical-offset="720">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/httpserver/HttpServerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/httpserver/MockSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="40" selection-start="424" selection-end="424" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/httpserver/MockClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="1" selection-start="1133" selection-end="1133" vertical-scroll-proportion="0.9322638" vertical-offset="107" max-vertical-offset="720">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -680,71 +721,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/httpserver/StartServerTest.java">
+    <entry file="file://$PROJECT_DIR$/tests/httpserver/MockOutputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="29" selection-start="90" selection-end="90" vertical-scroll-proportion="0.1626898" vertical-offset="0" max-vertical-offset="461">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/httpserver/WorkerRunnableTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1618" selection-end="2056" vertical-scroll-proportion="0.05679513" vertical-offset="692" max-vertical-offset="1185">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/httpserver/TestHelpers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="5" selection-start="905" selection-end="905" vertical-scroll-proportion="0.6502242" vertical-offset="0" max-vertical-offset="669">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/httpserver/RequestParserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="34" selection-start="3884" selection-end="3884" vertical-scroll-proportion="0.31630647" vertical-offset="1309" max-vertical-offset="1905">
+        <state line="10" column="4" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
           <folding>
-            <element signature="e#3162#3178#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/httpserver/StartServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="42" selection-start="272" selection-end="327" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/httpserver/WorkerRunnable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="5" selection-start="1611" selection-end="1611" vertical-scroll-proportion="0.0625" vertical-offset="604" max-vertical-offset="1260">
+        <state line="30" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.0" vertical-offset="86" max-vertical-offset="1185">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/httpserver/WorkerRunnableTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="49" selection-start="843" selection-end="843" vertical-scroll-proportion="0.0" vertical-offset="181" max-vertical-offset="1230">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/httpserver/TestHelpers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/httpserver/SiteManagerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="53" selection-start="465" selection-end="465" vertical-scroll-proportion="0.07284768" vertical-offset="222" max-vertical-offset="765">
+        <state line="20" column="0" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/httpserver/ResponseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="106" selection-start="2298" selection-end="2298" vertical-scroll-proportion="1.3354532" vertical-offset="0" max-vertical-offset="975">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/httpserver/RequestHandlerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="284" selection-start="9130" selection-end="9130" vertical-scroll-proportion="6.197183" vertical-offset="0" max-vertical-offset="3195">
+        <state line="176" column="284" selection-start="9130" selection-end="9130" vertical-scroll-proportion="4.285714" vertical-offset="0" max-vertical-offset="3195">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/httpserver/RequestParser.java">
+    <entry file="file://$PROJECT_DIR$/tests/httpserver/RequestParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="21" selection-start="6046" selection-end="6062" vertical-scroll-proportion="6.719457" vertical-offset="0" max-vertical-offset="3225">
+        <state line="2" column="7" selection-start="28" selection-end="28" vertical-scroll-proportion="0.05464481" vertical-offset="0" max-vertical-offset="2085">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/httpserver/HttpServerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="5" selection-start="783" selection-end="783" vertical-scroll-proportion="0.85409254" vertical-offset="0" max-vertical-offset="600">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/httpserver/MockSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="65" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.6405694" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/httpserver/FormResponseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="69" selection-start="3853" selection-end="3853" vertical-scroll-proportion="0.9466192" vertical-offset="503" max-vertical-offset="1185">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/httpserver/ArgsParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="142" selection-end="142" vertical-scroll-proportion="-0.040925268" vertical-offset="128" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/httpserver/AuthenticateResponseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="9" selection-start="2286" selection-end="2286" vertical-scroll-proportion="1.3114754" vertical-offset="0" max-vertical-offset="1005">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/httpserver/BodyGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="19" selection-start="526" selection-end="549" vertical-scroll-proportion="-1.5806452" vertical-offset="1020" max-vertical-offset="1485">
+        <state line="19" column="0" selection-start="507" selection-end="507" vertical-scroll-proportion="-1.1352314" vertical-offset="923" max-vertical-offset="1485">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#writeImageToResponse#0;class#BodyGenerator#0" expanded="false" />
@@ -752,75 +845,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/httpserver/SiteManager.java">
+    <entry file="file://$PROJECT_DIR$/src/httpserver/FormResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="50" selection-start="2389" selection-end="2440" vertical-scroll-proportion="0.40691927" vertical-offset="638" max-vertical-offset="1245">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#263#279#0" expanded="true" />
-            <element signature="e#413#429#0" expanded="true" />
-            <element signature="e#509#527#0" expanded="true" />
-            <element signature="e#603#621#0" expanded="true" />
-            <element signature="e#700#716#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/httpserver/StartServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="103" selection-end="103" vertical-scroll-proportion="0.17298187" vertical-offset="0" max-vertical-offset="607">
+        <state line="5" column="18" selection-start="79" selection-end="79" vertical-scroll-proportion="0.03914591" vertical-offset="53" max-vertical-offset="615">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/httpserver/HttpServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="9" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1245">
+        <state line="22" column="0" selection-start="537" selection-end="537" vertical-scroll-proportion="0.48042706" vertical-offset="0" max-vertical-offset="1215">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/httpserver/RequestParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="0" selection-start="4191" selection-end="4305" vertical-scroll-proportion="0.22597864" vertical-offset="1898" max-vertical-offset="3195">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/httpserver/Response.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="636" max-vertical-offset="1245">
+        <state line="63" column="10" selection-start="1882" selection-end="1888" vertical-scroll-proportion="0.56049824" vertical-offset="570" max-vertical-offset="1215">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/httpserver/RequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="0" selection-start="2636" selection-end="2636" vertical-scroll-proportion="-0.43715847" vertical-offset="1515" max-vertical-offset="2340">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/httpserver/AuthenticateResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="52" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
+        <state line="6" column="8" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="23" max-vertical-offset="990">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/httpserver/FormResponse.java">
+    <entry file="file://$PROJECT_DIR$/src/httpserver/SiteManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="20" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/httpserver/RequestHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="38" selection-start="1166" selection-end="1166" vertical-scroll-proportion="-19.615385" vertical-offset="0" max-vertical-offset="2340">
+        <state line="9" column="26" selection-start="196" selection-end="196" vertical-scroll-proportion="0.053380784" vertical-offset="105" max-vertical-offset="1275">
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/httpserver/ResponseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="38" selection-start="944" selection-end="944" vertical-scroll-proportion="0.5472973" vertical-offset="0" max-vertical-offset="740">
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1746#1762#0" expanded="true" />
           </folding>
         </state>
       </provider>

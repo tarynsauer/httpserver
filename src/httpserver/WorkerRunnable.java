@@ -17,16 +17,8 @@ public class WorkerRunnable implements Runnable {
         this.clientSocket = clientSocket;
     }
 
-    public void setRequestHandler(RequestHandler requestHandler) {
-        this.requestHandler = requestHandler;
-    }
-
-    public void setInput(BufferedReader clientRequest) {
-        this.input = clientRequest;
-    }
-
-    public void setClientSocket(Socket clientSocket) {
-        this.clientSocket = clientSocket;
+    protected void setClientInputStream(InputStream inputStream) {
+        this.clientInputStream = inputStream;
     }
 
     public InputStream getClientInputStream() {
@@ -39,7 +31,7 @@ public class WorkerRunnable implements Runnable {
 
     public void run() {
         try {
-            setClientInputStream();
+            createClientInputStream();
             BufferedReader reader = getClientRequest();
             byte[] response = getResponseMessage(reader);
             provideResponseForClient(response);
@@ -67,17 +59,13 @@ public class WorkerRunnable implements Runnable {
         return input;
     }
 
-    protected void setClientInputStream() {
+    protected void createClientInputStream() {
         try {
             this.clientInputStream = clientSocket.getInputStream();
         } catch (IOException e) {
             System.out.println("Can't get client input stream");
             e.printStackTrace();
         }
-    }
-
-    protected void setClientInputStream(InputStream inputStream) {
-        this.clientInputStream = inputStream;
     }
 
     protected void createClientOutputStream() throws IOException {

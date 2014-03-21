@@ -26,8 +26,6 @@ public class RequestParser {
 
     public String getRequest() { return this.request; }
 
-    public void setRequest(String request) { this.request = request; }
-
     public String getMethod() { return this.method; }
 
     public String getUri() { return this.uri; }

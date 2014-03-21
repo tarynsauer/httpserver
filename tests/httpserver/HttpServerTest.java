@@ -32,12 +32,4 @@ public class HttpServerTest {
         assertFalse(server.isStopped);
     }
 
-    @Test
-    public void testServerStartNewThread() throws Exception {
-        int beginCount = Thread.activeCount();
-        server.startNewThread();
-        int endCount = Thread.activeCount();
-        assertEquals(beginCount + 1, endCount);
-    }
-
 }
