@@ -8,41 +8,41 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Taryn on 3/13/14.
  */
-public class SiteManagerTest extends TestHelpers {
-    private SiteManager siteManager;
+public class RoutesTest extends TestHelpers {
+    private Routes routes;
 
     @Before
     public void setUp() throws Exception {
-        siteManager = new SiteManager();
+        routes = new Routes();
     }
 
     @Test
     public void testGetValidUris() throws Exception {
-        assertEquals(siteManager.getUris().size(), 16);
+        assertEquals(routes.getUris().size(), 16);
     }
 
     @Test
     public void testGetProtectedRoutes() throws Exception {
-        assertEquals(siteManager.getProtectedRoutes().length, 1);
+        assertEquals(routes.getProtectedRoutes().length, 1);
     }
 
     @Test
     public void testGetRedirectedRoutes() throws Exception {
-        assertEquals(siteManager.getRedirectedRoutes().size(), 1);
+        assertEquals(routes.getRedirectedRoutes().size(), 1);
     }
 
     @Test
     public void testGetRestrictedMethods() throws Exception {
-        assertEquals(siteManager.getRestrictedMethods().size(), 2);
+        assertEquals(routes.getRestrictedMethods().size(), 2);
     }
 
     @Test
     public void testGetMethodOptions() throws Exception {
-        assertEquals(siteManager.getMethodOptions().size(), 1);
+        assertEquals(routes.getMethodOptions().size(), 1);
     }
 
     @Test
     public void testGetRequestsToBeLogged() throws Exception {
-        assertEquals(siteManager.getRequestsToBeLogged().size(), 3);
+        assertEquals(routes.getRequestsToBeLogged().size(), 3);
     }
 }

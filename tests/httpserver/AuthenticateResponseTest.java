@@ -4,33 +4,20 @@ import org.junit.Test;
 
 import java.io.*;
 
-import static httpserver.HTTPStatusConstants.OK;
 import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Taryn on 3/20/14.
  */
 public class AuthenticateResponseTest extends TestHelpers {
-    private Response authenticateResponse;
+    private AuthenticateResponse authenticateResponse;
 
     private void setRequestString(String str) throws IOException {
         byte[] data = str.getBytes();
         InputStream input = new ByteArrayInputStream(data);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(input));
         RequestParser parser = new RequestParser(bufferedReader);
-        authenticateResponse = new AuthenticateResponse(parser, OK, "", "");
-    }
-
-    @Test
-    public void testGetContentsReturnsAuthenticationRequiredHeader() throws Exception {
-        setRequestString("GET /logs HTTP/1.1\r\nConnection: close\r\nHost: localhost:5000\r\n\r\n\r\n");
-        assertEquals("<h1>Authentication required</h1>", authenticateResponse.getContents());
-    }
-
-    @Test
-    public void testGetContentsReturnsLogsHeader() throws Exception {
-        setRequestString("GET /logs HTTP/1.1\r\nAuthorization: Basic YWRtaW46aHVudGVyMg==\r\nConnection: close\r\nHost: localhost:5000\r\n\r\n\r\n");
-        assertEquals("<h1>Logs</h1>", authenticateResponse.getContents());
+        authenticateResponse = new AuthenticateResponse(parser);
     }
 
     @Test

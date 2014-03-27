@@ -41,8 +41,13 @@ public class WorkerRunnable implements Runnable {
         }
     }
 
-    protected byte[] getResponseMessage(BufferedReader input) throws IOException {
-        this.requestHandler = new RequestHandler(new RequestParser(input));
+    protected byte[] getResponseMessage(BufferedReader input) {
+        try {
+            this.requestHandler = new RequestHandler(new RequestParser(input));
+        } catch (IOException e) {
+            System.out.println("Error getting client request");
+            e.printStackTrace();
+        }
         return requestHandler.getResponse();
     }
 

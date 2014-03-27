@@ -25,14 +25,10 @@ public class HttpServer implements Runnable {
     public void run() {
         synchronizeCurrentThread();
         openServerSocket();
-        try {
-            acceptClientRequest();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        acceptClientRequest();
     }
 
-    private void acceptClientRequest() throws IOException {
+    private void acceptClientRequest() {
         while(!isStopped()) {
             try {
                 clientSocket = serverSocket.accept();
@@ -55,8 +51,13 @@ public class HttpServer implements Runnable {
         }
     }
 
-    protected void startNewThread() throws IOException {
-        new Thread(new WorkerRunnable(clientSocket)).start();
+    protected void startNewThread() {
+        try {
+            new Thread(new WorkerRunnable(clientSocket)).start();
+        } catch (IOException e) {
+            System.out.println("Error starting new Thread");
+            e.printStackTrace();
+        }
     }
 
     protected void openServerSocket() {

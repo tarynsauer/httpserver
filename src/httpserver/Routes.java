@@ -1,13 +1,10 @@
 package httpserver;
 
-import java.io.File;
 import java.util.HashMap;
-
-import static httpserver.JavaserverConstants.DIRECTORY_PATH;
 /**
  * Created by Taryn on 3/13/14.
  */
-public class SiteManager {
+public class Routes {
 
     public String[] getProtectedRoutes() {
         return new String[] {"/logs"};
@@ -48,7 +45,7 @@ public class SiteManager {
 
     public HashMap<String, String> getUris() {
         HashMap<String, String> validUris = new HashMap<String, String>();
-        validUris.put("/", "<h1>Hey there!</h1>" + listFiles());
+        validUris.put("/", "Hey there!");
         validUris.put("/file1", "file");
         validUris.put("/file2", "file");
         validUris.put("/text-file.txt", "file");
@@ -56,25 +53,15 @@ public class SiteManager {
         validUris.put("/image.png", "image");
         validUris.put("/image.gif", "image");
         validUris.put("/partial_content.txt", "file");
-        validUris.put("/form", "<p>There may be a hidden name value here.</p>");
-        validUris.put("/parameters", "<h1>Decoded parameters:</h1>");
-        validUris.put("/log", "<h1>Log</h1>");
-        validUris.put("/these", "<h1>These</h1>");
-        validUris.put("/requests", "<h1>Requests</h1>");
-        validUris.put("/logs", "<h1>Logs</h1>");
-        validUris.put("/method_options", "<h1>Here are you method options</h1>");
+        validUris.put("/form", "There may be a hidden name value here.");
+        validUris.put("/parameters", "Decoded parameters");
+        validUris.put("/log", "Log");
+        validUris.put("/these", "These");
+        validUris.put("/requests", "Requests");
+        validUris.put("/logs", "Logs");
+        validUris.put("/method_options", "Here are you method options");
         validUris.put("/redirect", "redirect");
         return validUris;
-    }
-
-    private String listFiles() {
-        File directory = new File(DIRECTORY_PATH);
-        File[] files = directory.listFiles();
-        String fileList = "";
-        for (File file : files) {
-            fileList += "<li><a href='" + file.getName() + "'>" + file.getName() + "</a></li>";
-        }
-        return fileList;
     }
 
 }

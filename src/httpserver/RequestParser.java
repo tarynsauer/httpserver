@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static httpserver.JavaserverConstants.*;
+
 /**
  * Created by Taryn on 3/12/14.
  */
@@ -46,6 +48,21 @@ public class RequestParser {
         this.fileExtension = parseFileExtension();
         this.params = parseParams();
         this.headers = parseHeaders();
+    }
+
+    public String getContentType() {
+        String ext = getFileExtension();
+        if (ext.equals(TXT)) {
+            return TEXT_PLAIN;
+        } else if (ext.equals(JPG) || ext.equals(JPEG)) {
+            return IMAGE_JPG;
+        } else if (ext.equals(GIF)) {
+            return IMAGE_GIF;
+        } else if (ext.equals(PNG)) {
+            return IMAGE_PNG;
+        } else {
+            return TEXT_HTML;
+        }
     }
 
     private String parseRequest() throws IOException {

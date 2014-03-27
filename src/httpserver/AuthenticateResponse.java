@@ -1,4 +1,6 @@
 package httpserver;
+import java.io.IOException;
+
 import static httpserver.JavaserverConstants.AUTH_TOKEN;
 import static httpserver.HTTPStatusConstants.*;
 /**
@@ -6,21 +8,32 @@ import static httpserver.HTTPStatusConstants.*;
  */
 public class AuthenticateResponse extends Response {
     private boolean authenticated = false;
-    private String contents;
     private String authentication;
-    private String logContents;
+    private Logger logger;
+    private BodyGenerator bodyGenerator;
 
-    public AuthenticateResponse(RequestParser parser, String status, String contents, String logContents) {
-        super(parser, status, contents, logContents);
+    public AuthenticateResponse(RequestParser parser) {
+        super(parser);
         this.authentication = parser.getAuthentication();
         isValid();
-        this.contents = getContents();
-        this.logContents = logContents;
+        this.bodyGenerator = new BodyGenerator(parser);
+        this.logger = new Logger(parser);
+    }
+
+    public byte[] getResponseMessage() throws IOException {
+        StringBuilder builder = new StringBuilder();
+        builder.append(displayStatus(getStatus()));
+        builder.append(displayDate());
+        builder.append(displayServer());
+        builder.append(displayResponseHeaders());
+        builder.append(displayContentType());
+
+        return bodyGenerator.addBodyToResponse(builder, getContents());
     }
 
     public String getContents() {
         if (getAuthenticated()) {
-            return "<h1>Logs</h1>" + getLogContents();
+            return "<h1>Logs</h1>" + logger.getLogs();
         } else {
             return "<h1>Authentication required</h1>";
         }
@@ -60,7 +73,4 @@ public class AuthenticateResponse extends Response {
         }
     }
 
-    private String getLogContents() {
-        return logContents;
-    }
 }

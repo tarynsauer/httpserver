@@ -1,6 +1,8 @@
 package httpserver;
 
 import java.io.*;
+import java.net.URLDecoder;
+
 import static java.util.Arrays.copyOfRange;
 import static httpserver.JavaserverConstants.DIRECTORY_PATH;
 
@@ -9,13 +11,18 @@ import static httpserver.JavaserverConstants.DIRECTORY_PATH;
  */
 public class BodyGenerator {
     private RequestParser parser;
+    private Routes routes;
+    private AttributeValues attributeValues;
 
     public BodyGenerator(RequestParser parser) {
         this.parser = parser;
+        this.routes = new Routes();
+        this.attributeValues = new AttributeValues(parser);
     }
 
-    public byte[] addBodyToResponse(StringBuilder builder, String contents) throws IOException {
+    public byte[] addBodyToResponse(StringBuilder builder) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        String contents = getContents();
 
         if (parser.containsHeader("Range")) {
             String partialContents = new String(getPartialResponse());
@@ -28,6 +35,14 @@ public class BodyGenerator {
         } else {
             builder.append(displayBody(contents));
         }
+        outputStream.write(builder.toString().getBytes());
+        outputStream.close();
+        return outputStream.toByteArray();
+    }
+
+    public byte[] addBodyToResponse(StringBuilder builder, String contents) throws IOException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        builder.append(displayBody(contents));
         outputStream.write(builder.toString().getBytes());
         outputStream.close();
         return outputStream.toByteArray();
@@ -98,6 +113,46 @@ public class BodyGenerator {
         } else {
             return copyOfRange(contents, parser.getBeginRange(), parser.getEndRange());
         }
+    }
+
+    protected String getContents() throws UnsupportedEncodingException {
+        String pageContents = routes.getUris().get(parser.getUri());
+        String pageHeading = "<h1>" + pageContents +"</h1>";
+
+        if (parser.getUri().equals("/")) {
+            return pageHeading + listFiles();
+        } else if (parser.getUri().equals("/form")) {
+            return pageHeading + getHiddenValue();
+        } else if (pageContents.equals("file") || (pageContents.equals("image"))) {
+            return pageContents;
+        } else if (parser.getQueryString() == null) {
+            return pageHeading;
+        } else {
+            return pageHeading + getQueries();
+        }
+    }
+
+    public String getHiddenValue() {
+        return "<p data = " + attributeValues.getData() + ">There may be a hidden name value here.</p>";
+    }
+
+    private String getQueries() throws UnsupportedEncodingException {
+        String[] allVariables = parser.getAllVariables();
+        String content = "";
+        for (String match : allVariables) {
+            content += "<p>" + URLDecoder.decode(match, "UTF-8") + "</p>";
+        }
+        return content;
+    }
+
+    private String listFiles() {
+        File directory = new File(DIRECTORY_PATH);
+        File[] files = directory.listFiles();
+        String fileList = "";
+        for (File file : files) {
+            fileList += "<li><a href='" + file.getName() + "'>" + file.getName() + "</a></li>";
+        }
+        return fileList;
     }
 
 }
