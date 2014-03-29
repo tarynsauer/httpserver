@@ -9,7 +9,6 @@ import static httpserver.HTTPStatusConstants.*;
 public class AuthenticateResponse extends Response {
     private boolean authenticated = false;
     private String authentication;
-    private Logger logger;
     private BodyGenerator bodyGenerator;
 
     public AuthenticateResponse(RequestParser parser) {
@@ -17,7 +16,6 @@ public class AuthenticateResponse extends Response {
         this.authentication = parser.getAuthentication();
         isValid();
         this.bodyGenerator = new BodyGenerator(parser);
-        this.logger = new Logger(parser);
     }
 
     public byte[] getResponseMessage() throws IOException {
@@ -28,15 +26,12 @@ public class AuthenticateResponse extends Response {
         builder.append(displayResponseHeaders());
         builder.append(displayContentType());
 
-        return bodyGenerator.addBodyToResponse(builder, getContents());
-    }
-
-    public String getContents() {
-        if (getAuthenticated()) {
-            return "<h1>Logs</h1>" + logger.getLogs();
+        if (authenticated) {
+            return bodyGenerator.addAuthenticatedBodyToResponse(builder);
         } else {
-            return "<h1>Authentication required</h1>";
+            return bodyGenerator.addUnauthenticatedBodyToResponse(builder);
         }
+
     }
 
     public String getStatus() {

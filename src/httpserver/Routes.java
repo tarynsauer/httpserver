@@ -53,7 +53,7 @@ public class Routes {
         validUris.put("/image.png", "image");
         validUris.put("/image.gif", "image");
         validUris.put("/partial_content.txt", "file");
-        validUris.put("/form", "There may be a hidden name value here.");
+        validUris.put("/form", "There may be a hidden name value here");
         validUris.put("/parameters", "Decoded parameters");
         validUris.put("/log", "Log");
         validUris.put("/these", "These");

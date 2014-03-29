@@ -22,7 +22,7 @@ public class ResponseDispatcher {
         this.status = getStatus();
     }
 
-    public byte[] getResponse() throws IOException {
+    public Response getResponse() throws IOException {
         if (requestToBeLogged()) {
             logger.logRequest();
         }
@@ -32,23 +32,17 @@ public class ResponseDispatcher {
         }
 
         if (status.equals(UNAUTHORIZED)) {
-            AuthenticateResponse response = new AuthenticateResponse(parser);
-            return response.getResponseMessage();
+            return new AuthenticateResponse(parser);
         } else if (status.equals(NOT_FOUND)) {
-            NotFoundResponse response = new NotFoundResponse(parser);
-            return response.getResponseMessage();
+            return new NotFoundResponse(parser);
         } else if (status.equals(MOVED_PERMANENTLY)) {
-            MovedPermanentlyResponse response = new MovedPermanentlyResponse(parser);
-            return response.getResponseMessage();
+            return new MovedPermanentlyResponse(parser);
         } else if (status.equals(METHOD_NOT_ALLOWED)) {
-            MethodNotAllowedResponse response = new MethodNotAllowedResponse(parser);
-            return response.getResponseMessage();
+            return new MethodNotAllowedResponse(parser);
         } else if (status.equals(PARTIAL_RESPONSE)) {
-            PartialResponse response = new PartialResponse(parser);
-            return response.getResponseMessage();
+            return new PartialResponse(parser);
         } else {
-            OKResponse response = new OKResponse(parser);
-            return response.getResponseMessage();
+            return new OKResponse(parser);
         }
     }
 
@@ -56,7 +50,7 @@ public class ResponseDispatcher {
         return parser.getUri().equals("/form");
     }
 
-    private boolean requestToBeLogged() {
+    protected boolean requestToBeLogged() {
         return routes.getRequestsToBeLogged().containsKey(parser.getUri()) && routes.getRequestsToBeLogged().containsValue(parser.getMethod());
     }
 

@@ -13,22 +13,20 @@ public class BodyGenerator {
     private RequestParser parser;
     private Routes routes;
     private AttributeValues attributeValues;
+    private Logger logger;
 
     public BodyGenerator(RequestParser parser) {
         this.parser = parser;
         this.routes = new Routes();
         this.attributeValues = new AttributeValues(parser);
+        this.logger = new Logger(parser);
     }
 
     public byte[] addBodyToResponse(StringBuilder builder) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         String contents = getContents();
 
-        if (parser.containsHeader("Range")) {
-            String partialContents = new String(getPartialResponse());
-            builder.append(partialContents);
-        }
-        else if (contents.equals("file")) {
+        if (contents.equals("file")) {
             builder = getFileContents(builder);
         } else if (contents.equals("image")) {
             writeImageToResponse(outputStream, builder);
@@ -40,17 +38,34 @@ public class BodyGenerator {
         return outputStream.toByteArray();
     }
 
-    public byte[] addBodyToResponse(StringBuilder builder, String contents) throws IOException {
+    public byte[] addBodyToResponse(StringBuilder builder, String header) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        builder.append(displayBody(contents));
+        builder.append(displayBody("<h1>" + header + "</h1>"));
         outputStream.write(builder.toString().getBytes());
         outputStream.close();
         return outputStream.toByteArray();
     }
 
-    public byte[] addNotFoundResponse(StringBuilder builder) throws IOException {
+    public byte[] addPartialBodyToResponse(StringBuilder builder) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        builder.append(displayBody("<h1>404 Not Found</h1>"));
+        String partialContents = new String(getPartialResponse());
+        builder.append(partialContents);
+        outputStream.write(builder.toString().getBytes());
+        outputStream.close();
+        return outputStream.toByteArray();
+    }
+
+    public byte[] addAuthenticatedBodyToResponse(StringBuilder builder) throws IOException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        builder.append(displayBody("<h1>Logs</h1>" + logger.getLogs()));
+        outputStream.write(builder.toString().getBytes());
+        outputStream.close();
+        return outputStream.toByteArray();
+    }
+
+    public byte[] addUnauthenticatedBodyToResponse(StringBuilder builder) throws IOException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        builder.append(displayBody("<h1>Authentication required</h1>"));
         outputStream.write(builder.toString().getBytes());
         outputStream.close();
         return outputStream.toByteArray();

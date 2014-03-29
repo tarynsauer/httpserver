@@ -17,15 +17,12 @@ public class PartialResponse extends Response {
 
     public byte[] getResponseMessage() throws IOException {
         StringBuilder builder = new StringBuilder();
-        builder.append(displayStatus());
+        builder.append(displayStatus(PARTIAL_RESPONSE));
         builder.append(displayDate());
         builder.append(displayServer());
         builder.append(displayContentType());
 
-        return bodyGenerator.addBodyToResponse(builder);
+        return bodyGenerator.addPartialBodyToResponse(builder);
     }
 
-    protected String displayStatus() {
-        return "HTTP/1.1 " + PARTIAL_RESPONSE +  "\r\n";
-    }
 }

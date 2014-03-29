@@ -21,7 +21,7 @@ public class NotFoundResponse extends Response {
         builder.append(displayServer());
         builder.append(displayContentType());
 
-        return bodyGenerator.addNotFoundResponse(builder);
+        return bodyGenerator.addBodyToResponse(builder, NOT_FOUND);
     }
 
 }
